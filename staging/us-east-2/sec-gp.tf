@@ -22,6 +22,11 @@ resource "aws_security_group" "Pub_sg" {
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
   }
+
+  ## create before destroy rule ###
+  lifecycle {
+    create_before_destroy = true
+  }
   tags = {
     Name = "Public-sg"
   }
