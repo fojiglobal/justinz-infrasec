@@ -28,7 +28,7 @@ resource "aws_autoscaling_group" "staging_asg" {
   desired_capacity    = 2
   max_size            = 3
   min_size            = 1
-
+  target_group_arns   = [aws_lb_target_group.staging_tg.arn]
   launch_template {
     id      = aws_launch_template.staging_lt.id
     version = "$Latest"
@@ -39,3 +39,4 @@ resource "aws_autoscaling_group" "staging_asg" {
     propagate_at_launch = true
   }
 }
+
