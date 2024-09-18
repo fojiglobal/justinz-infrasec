@@ -5,6 +5,14 @@ terraform {
       version = "~> 5.0"
     }
   }
+
+
+  ##### Backend for my s3 bucket ########
+  backend "s3" {
+    bucket = "justin-cs2-terraform"
+    key    = "staging/terraform.tfstate"
+    region = "us-east-2"
+  }
 }
 
 # Configure the AWS Provider
