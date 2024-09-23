@@ -76,7 +76,7 @@ resource "aws_lb_listener_rule" "staging_web_rule" {
 
   condition {
     path_pattern {
-      values = ["jcz-realestate.com", "www.jcz-realestate.com"]
+      values = ["jcz-realestate.com", "www.staging.jcz-realestate.com"]
     }
   }
 }
