@@ -10,16 +10,11 @@ resource "aws_iam_user" "name" {
   name  = var.infrasec_users[count.index]
 }
 
-# output "name" {
-#   value = aws_iam_user.name[2]
-# }
-
-output "user1" {
-  value = aws_iam_user.name[0].arn
+output "user_arn" {
+  value = aws_iam_user.name[*].arn
 }
-output "user2" {
-  value = aws_iam_user.name[1].arn
-}
-output "user3" {
-  value = aws_iam_user.name[2].arn
+##### Foreach loop for managers
+resource "aws_iam_user" "managers" {
+  for_each = toset(var.infrasec_managers)
+  name     = each.value
 }

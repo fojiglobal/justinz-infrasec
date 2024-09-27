@@ -19,3 +19,9 @@ variable "infrasec_users" {
   type    = list(string)
   default = ["jdoe", "jdone", "jbrown"]
 }
+
+### Foreach loop to create users
+variable "infrasec_managers" {
+  type    = list(string)
+  default = ["bobama", "jbiden", "kharris"]
+}
