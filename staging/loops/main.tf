@@ -19,12 +19,12 @@
 #   name     = each.value
 # }
 
-# resource "aws_vpc" "vpcs" {
-#   for_each             = var.vpcs
-#   cidr_block           = each.value["cidr"]
-#   tags                 = each.value["tags"]
-#   enable_dns_hostnames = each.value["enable_dns"]
-# }
+resource "aws_vpc" "vpcs" {
+  for_each             = var.vpcs
+  cidr_block           = each.value["cidr"]
+  tags                 = each.value["tags"]
+  enable_dns_hostnames = each.value["enable_dns"]
+}
 
 resource "aws_vpc" "dr" {
   cidr_block = "10.110.0.0/16"
@@ -37,4 +37,12 @@ resource "aws_subnet" "public_subnets" {
   availability_zone       = each.value["azs"]
   map_public_ip_on_launch = each.value["enable_public_ip"]
   tags                    = each.value["tags"]
+}
+
+output "pub_sub1" {
+  value = aws_subnet.public_subnets["pub-sub1"].id
+}
+
+output "staging_vpc" {
+  value = aws_vpc.vpcs["staging"].id
 }
