@@ -13,3 +13,9 @@ variable "enable_dns" {
   default = false
 
 }
+
+### adding list of string to create users using loops
+variable "infrasec_users" {
+  type    = list(string)
+  default = ["jdoe", "jdone", "jbrown"]
+}
