@@ -67,8 +67,8 @@ locals {
 }
 
 module "dev" {
-  source          = "./modules"
-  cidr_block      = local.vpc_cidr
+  source = "./modules"
+  #cidr_block      = local.vpc_cidr
   vpc_cidr        = local.vpc_cidr
   env             = local.env
   public_subnets  = local.public_subnets
