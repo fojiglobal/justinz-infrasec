@@ -7,7 +7,7 @@ locals {
       azs              = "us-east-2a"
       enable_public_ip = true
       tags = {
-        name        = "pub-sub1"
+        Name        = "pub-sub1"
         Environment = "dev"
       }
     }
@@ -17,7 +17,7 @@ locals {
       azs              = "us-east-2b"
       enable_public_ip = true
       tags = {
-        name        = "pub-sub2"
+        Name        = "pub-sub2"
         Environment = "dev"
       }
     }
@@ -27,7 +27,7 @@ locals {
       azs              = "us-east-2c"
       enable_public_ip = true
       tags = {
-        name        = "pub-sub3"
+        Name        = "pub-sub3"
         Environment = "dev"
       }
     }
@@ -39,7 +39,7 @@ locals {
       cidr = "10.120.10.0/24"
       azs  = "us-east-2a"
       tags = {
-        name        = "priv-sub1"
+        Name        = "priv-sub1"
         Environment = "dev"
       }
     }
@@ -48,7 +48,7 @@ locals {
       cidr = "10.120.11.0/24"
       azs  = "us-east-2b"
       tags = {
-        name        = "priv-sub2"
+        Name        = "priv-sub2"
         Environment = "dev"
       }
     }
@@ -57,7 +57,7 @@ locals {
       cidr = "10.120.12.0/24"
       azs  = "us-east-2c"
       tags = {
-        name        = "priv-sub3"
+        Name        = "priv-sub3"
         Environment = "dev"
       }
     }
@@ -74,3 +74,4 @@ module "dev" {
   public_subnets  = local.public_subnets
   private_subnets = local.private_subnets
 }
+
