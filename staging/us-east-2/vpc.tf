@@ -9,3 +9,9 @@ module "staging" {
 output "vpc_id" {
   value = module.staging.vpc_id
 }
+
+output "public_subnet_id" {
+  #value = module.staging.public_subnet_ids012.
+  value = module.staging.public_subnet_ids[0]
+
+}
