@@ -28,3 +28,12 @@ variable "private_subnets" {
     tags = map(string)
   }))
 }
+
+variable "pub-sub-name" {
+  type = string
+}
+
+variable "all_ipv4_cidr" {
+  type    = string
+  default = "0.0.0.0/0"
+}
