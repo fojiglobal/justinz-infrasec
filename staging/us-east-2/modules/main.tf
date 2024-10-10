@@ -89,3 +89,44 @@ resource "aws_route_table_association" "private" {
   for_each       = var.private_subnets
   subnet_id      = aws_subnet.private[each.key].id
 }
+
+
+##### Auto scaling Group #######
+
+resource "aws_launch_template" "lt" {
+  name     = "${var.env}-lt"
+  image_id = var.ami_id #"ami-085f9c64a9b75eed5"
+  #image_id                             = "aws_ami"
+  instance_type                        = var.instance_type #"t2.micro"
+  instance_initiated_shutdown_behavior = "terminate"
+  vpc_security_group_ids               = [aws_security_group.private.id]
+  key_name                             = var.instance_key #"cs2-use2-main"
+  tag_specifications {
+    resource_type = "instance"
+
+    tags = {
+      Name = "${var.env}-web"
+    }
+  }
+
+  user_data = var.user_data
+}
+
+resource "aws_autoscaling_group" "asg" {
+  name = "${var.env}-asg"
+  #availability_zones = ["us-east-2a", "us-east-2b"]
+  vpc_zone_identifier = [for subnet in aws_subnet.private : subnet.id]
+  desired_capacity    = var.desired
+  max_size            = var.max_size
+  min_size            = var.min_size
+  #target_group_arns   = [aws_lb_target_group.tgw.arn]
+  launch_template {
+    id      = aws_launch_template.lt.id
+    version = "$Latest"
+  }
+  tag {
+    key                 = "name"
+    value               = "${var.env}-web"
+    propagate_at_launch = true
+  }
+}

@@ -6,7 +6,7 @@ variable "env" {
   type = string
 }
 
-#####Subnets Variables ####
+##### Subnets Variables ####
 
 variable "public_subnets" {
   type = map(object({
@@ -36,4 +36,92 @@ variable "pub-sub-name" {
 variable "all_ipv4_cidr" {
   type    = string
   default = "0.0.0.0/0"
+}
+
+variable "ami_id" {
+  type    = string
+  default = "ami-085f9c64a9b75eed5"
+}
+
+variable "instance_type" {
+  type    = string
+  default = "t2.micro"
+}
+
+variable "instance_key" {
+  type    = string
+  default = "cs2-use2-main"
+}
+
+variable "user_data" {
+  type = string
+}
+
+variable "min_size" {
+  type    = number
+  default = 1
+}
+
+variable "max_size" {
+  type    = number
+  default = 2
+}
+
+variable "desired" {
+  type    = number
+  default = 2
+}
+
+variable "public_sg_ingress" {
+  type = map(object({
+    src         = string
+    from_port   = number
+    ip_protocol = string
+    to_port     = number
+    description = string
+  }))
+}
+
+variable "public_sg_egress" {
+  type = map(object({
+    dest        = string
+    ip_protocol = string
+    description = string
+  }))
+}
+
+variable "private_sg_ingress" {
+  type = map(object({
+    src         = string
+    from_port   = number
+    ip_protocol = string
+    to_port     = number
+    description = string
+  }))
+}
+
+variable "private_sg_egress" {
+  type = map(object({
+    dest        = string
+    ip_protocol = string
+    description = string
+  }))
+}
+
+variable "bastion_sg_ingress" {
+  type = map(object({
+    src         = string
+    from_port   = number
+    to_port     = number
+    ip_protocol = string
+    description = string
+  }))
+}
+
+variable "bastion_sg_egress" {
+  type = map(object({
+    dest        = string
+    ip_protocol = string
+    description = string
+  }))
 }

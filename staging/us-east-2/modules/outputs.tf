@@ -9,3 +9,14 @@ output "public_subnet_ids" {
 output "private_subnet_ids" {
   value = [for subnet in aws_subnet.private : subnet.id]
 }
+
+output "public_sg_id" {
+  value = aws_security_group.public.id
+}
+output "private_sg_id" {
+  value = aws_security_group.private.id
+}
+
+output "bastion_sg_id" {
+  value = aws_security_group.bastion.id
+}
