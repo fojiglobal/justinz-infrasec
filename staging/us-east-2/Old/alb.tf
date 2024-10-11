@@ -13,11 +13,12 @@ resource "aws_lb_target_group" "staging_tg" {
 
 ### Application Load Balancer ####
 resource "aws_lb" "staging_alb" {
-  name               = "${var.staging_env}-alb"
-  internal           = false
-  load_balancer_type = "application"
-  security_groups    = [aws_security_group.Pub_sg.id]
-  subnets            = [aws_subnet.staging_Pub_1.id, aws_subnet.staging_Pub_2.id]
+  name                       = "${var.staging_env}-alb"
+  internal                   = false
+  load_balancer_type         = "application"
+  security_groups            = [aws_security_group.Pub_sg.id]
+  subnets                    = [aws_subnet.staging_Pub_1.id, aws_subnet.staging_Pub_2.id]
+  drop_invalid_header_fields = true
 
   #enable_deletion_protection = true
 
