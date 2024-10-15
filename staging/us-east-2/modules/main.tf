@@ -130,3 +130,98 @@ resource "aws_autoscaling_group" "asg" {
     propagate_at_launch = true
   }
 }
+
+######Target group #####
+resource "aws_lb_target_group" "tg" {
+  name     = "${var.env}-tg-80"
+  port     = var.alb_port_http
+  protocol = var.alb_proto_http
+  vpc_id   = aws_vpc.this.id
+
+  tags = {
+    Name        = "${var.env}-tg-80"
+    Environment = var.env
+  }
+
+}
+##### Application Load Balancer ####
+resource "aws_lb" "alb" {
+  name                       = "${var.env}-alb"
+  internal                   = var.internet_facing
+  load_balancer_type         = var.alb_type
+  security_groups            = [aws_security_group.public.id]
+  subnets                    = [for subnet in aws_subnet.public : subnet.id]
+  drop_invalid_header_fields = true
+
+  tags = {
+    Name        = "${var.env}-alb"
+    Environment = var.env
+  }
+}
+
+###### Listeners ####
+resource "aws_lb_listener" "alb_https" {
+  load_balancer_arn = aws_lb.alb.arn
+  port              = var.alb_port_https
+  protocol          = var.alb_proto_https
+  ssl_policy        = var.alb_ssl_policy
+  certificate_arn   = var.certificate_arn
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.tg.arn
+    # type = "fixed-response"
+    # fixed_response {
+    #   content_type = "text/plain"
+    #   message_body = "Page not found. Com back later"
+    #   status_code  = "200"
+    # }
+  }
+}
+
+resource "aws_lb_listener" "alb_http_https" {
+  load_balancer_arn = aws_lb.alb.arn
+  port              = var.alb_port_http
+  protocol          = var.alb_proto_http
+
+  default_action {
+    type = "redirect"
+
+    redirect {
+      port        = var.alb_port_https
+      protocol    = var.alb_proto_https
+      status_code = "HTTP_301"
+    }
+  }
+}
+
+#### Listener rule ####
+resource "aws_lb_listener_rule" "alb_web_rule" {
+  listener_arn = aws_lb_listener.alb_https.arn
+  priority     = 100
+
+  action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.tg.arn
+  }
+
+  condition {
+    path_pattern {
+      values = ["jcz-realestate.com", "www.staging.jcz-realestate.com"]
+    }
+  }
+}
+
+####### DNS Record #####
+resource "aws_route53_record" "staging" {
+  for_each = var.dns_alias
+  zone_id  = var.zone_id
+  name     = each.value
+  type     = "A"
+
+  alias {
+    name                   = aws_lb.alb.dns_name
+    zone_id                = aws_lb.alb.zone_id
+    evaluate_target_health = true
+  }
+}

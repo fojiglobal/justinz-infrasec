@@ -148,3 +148,37 @@ locals {
     }
   }
 }
+#### Target Group ####
+locals {
+  alb_port_http  = 80
+  alb_proto_http = "HTTP"
+  health_check = {
+    healthy_threshold = 2
+    interval          = 10
+  }
+}
+
+##### Application Load Balancer ####
+locals {
+  internet_facing = false
+  alb_type        = "application"
+  alb_proto_https = "HTTPS"
+
+}
+
+##### Load Balancer Listeners ###
+locals {
+  alb_port_https = 443
+  alb_ssl_policy = "ELBSecurityPolicy-2016-08"
+
+}
+##### DNS ######
+locals {
+  zone_id         = data.aws_route53_zone.jcz-realestate.zone_id
+  certificate_arn = data.aws_acm_certificate.alb_cert.arn
+
+  dns_alias = {
+    "alias_1" = "www.${local.env}.jcz-realestate.com"
+    "alias_2" = "${local.env}.jcz-realestate.com"
+  }
+}

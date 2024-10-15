@@ -12,6 +12,16 @@ module "staging" {
   private_sg_egress  = local.private_sg_egress
   bastion_sg_ingress = local.bastion_sg_ingress
   bastion_sg_egress  = local.bastion_sg_egress
+  alb_port_http      = local.alb_port_http
+  alb_proto_http     = local.alb_proto_http
+  internet_facing    = local.internet_facing
+  alb_type           = local.alb_type
+  alb_proto_https    = local.alb_proto_https
+  alb_port_https     = local.alb_port_https
+  alb_ssl_policy     = local.alb_ssl_policy
+  certificate_arn    = local.certificate_arn
+  dns_alias          = local.dns_alias
+  zone_id            = local.zone_id
 }
 
 # output "vpc_id" {
