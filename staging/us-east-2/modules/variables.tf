@@ -125,3 +125,43 @@ variable "bastion_sg_egress" {
     description = string
   }))
 }
+##### Variable for target group ####
+variable "alb_port_http" {
+  type = number
+}
+
+variable "alb_proto_http" {
+  type = string
+}
+##### Application Load Balancer ####
+variable "internet_facing" {
+  type = string
+}
+
+variable "alb_type" {
+  type = string
+}
+
+variable "alb_proto_https" {
+  type = string
+}
+
+variable "alb_port_https" {
+  type = number
+}
+
+variable "alb_ssl_policy" {
+  type = string
+}
+
+variable "certificate_arn" {
+  type = string
+}
+
+variable "dns_alias" {
+  type = map(string)
+}
+
+variable "zone_id" {
+  type = string
+}
