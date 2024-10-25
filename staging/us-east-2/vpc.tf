@@ -1,5 +1,5 @@
 module "staging" {
-  source             = "./modules"
+  source             = "github.com/fojiglobal/justin-tf-modules//staging?ref=v1.1.0" #"./modules"
   vpc_cidr           = local.vpc_cidr
   env                = local.env
   public_subnets     = local.public_subnets
