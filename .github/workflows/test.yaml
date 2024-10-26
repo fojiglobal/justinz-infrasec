@@ -17,7 +17,7 @@ env:
   AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  ## job 1 Terraform apply
   tfplan:
     defaults:
       run:
@@ -59,6 +59,7 @@ jobs:
         run: terraform plan -no-color
         #continue-on-error: true
 
+  # job 2 Terraform apply
   tfapply:
     needs: tfplan # use build after successful
     # The type of runner that the job will run on
