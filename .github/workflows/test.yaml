@@ -117,11 +117,19 @@ jobs:
                 body: output
               })
             }
-
+  terraform-snyk-scan:
+    needs: tfplan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Scan Terraform Code for Security Misconfigurations. Resolve All Critical and High before Merging to main.
+        uses: snyk/actions/iac@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
   # job 2 Terraform apply
   tfapply:
     if: github.event_name == 'push'
-    needs: tfplan # use build after successful
+    needs: terraform-snyk-scan # use build after successful
     # The type of runner that the job will run on
     runs-on:
       ubuntu-latest
