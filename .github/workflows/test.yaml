@@ -19,6 +19,8 @@ env:
 jobs:
   ## job 1 Terraform apply
   tfplan:
+    if: github.event_name == 'pull_request'
+    ## Only Run tfplan when a PR is open
     defaults:
       run:
         shell: bash
@@ -118,6 +120,7 @@ jobs:
 
   # job 2 Terraform apply
   tfapply:
+    if: github.event_name == 'push'
     needs: tfplan # use build after successful
     # The type of runner that the job will run on
     runs-on:
