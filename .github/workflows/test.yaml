@@ -128,6 +128,7 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           file: "./qa/us-east-2"
+          args: --severity-threshold=high
   # job 2 Terraform apply
   tfapply:
     if: always() && github.event_name == 'push'
