@@ -4,12 +4,6 @@ name: Provision Terraform
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  # push:
-  #   branches: ["main"]
-  # pull_request:
-  #   branches: ["main"]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 env:
@@ -33,15 +27,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-      # # Runs a single command using the runners shell
-      # - name: GHA Terraform
-      #   run: echo "Welcome to my GHA Terraform Test"
-
-      # # Runs a set of commands using the runners shell
-      # - name: Display Date and Time
-      #   run: |
-      #     Date
-      #     cat /etc/os-release
 
       - uses: hashicorp/setup-terraform@v3
       - name: Terraform fmt
@@ -60,64 +45,7 @@ jobs:
       - name: Terraform Plan
         id: plan
         run: terraform plan -no-color
-        #continue-on-error: true
-      # - uses: actions/github-script@v7
-      #   if: github.event_name == 'pull_request'
-      #   env:
-      #     PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
-      #   with:
-      #     github-token: ${{ secrets.GITHUB_TOKEN }}
-      #     script: |
-      #       // 1. Retrieve existing bot comments for the PR
-      #       const { data: comments } = await github.rest.issues.listComments({
-      #         owner: context.repo.owner,
-      #         repo: context.repo.repo,
-      #         issue_number: context.issue.number,
-      #       })
-      #       const botComment = comments.find(comment => {
-      #         return comment.user.type === 'Bot' && comment.body.includes('Terraform Format and Style')
-      #       })
 
-      #       // 2. Prepare format of the comment
-      #       const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
-      #       #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
-      #       #### Terraform Validation 🤖\`${{ steps.validate.outcome }}\`
-      #       <details><summary>Validation Output</summary>
-
-      #       \`\`\`\n
-      #       ${{ steps.validate.outputs.stdout }}
-      #       \`\`\`
-
-      #       </details>
-
-      #       #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
-
-      #       <details><summary>Show Plan</summary>
-
-      #       \`\`\`\n
-      #       ${process.env.PLAN}
-      #       \`\`\`
-
-      #       </details>
-
-      #       *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ env.tf_actions_working_dir }}\`, Workflow: \`${{ github.workflow }}\`*`;
-
-      #       // 3. If we have a comment, update it, otherwise create a new one
-      #       if (botComment) {
-      #         github.rest.issues.updateComment({
-      #           owner: context.repo.owner,
-      #           repo: context.repo.repo,
-      #           comment_id: botComment.id,
-      #           body: output
-      #       })
-      #       } else {
-      #         github.rest.issues.createComment({
-      #           issue_number: context.issue.number,
-      #           owner: context.repo.owner,
-      #           repo: context.repo.repo,
-      #           body: output
-      #         })
-      #       }
   terraform-snyk-scan:
     needs: tfplan
     runs-on: ubuntu-latest
@@ -151,18 +79,3 @@ jobs:
       # Runs a single command using the runners shell
       - name: Deploy Terraform
         run: terraform apply --auto-approve
-
-  # tfdestroy:
-  #   if: always() && github.event_name == 'workflow_dispatch'
-  #   needs: tfapply
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: hashicorp/setup-terraform@v3
-
-  #     - name: Terraform Init
-  #       id: init
-  #       run: terraform init
-
-  #     - name: Destroy Terraform
-  #       run: terraform destroy --auto-approve
