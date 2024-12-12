@@ -12,6 +12,7 @@ module "staging" {
   private_sg_egress  = local.private_sg_egress
   bastion_sg_ingress = local.bastion_sg_ingress
   bastion_sg_egress  = local.bastion_sg_egress
+  ami_id             = "ami-036841078a4b68e14"
   alb_port_http      = local.alb_port_http
   alb_proto_http     = local.alb_proto_http
   internet_facing    = local.internet_facing
