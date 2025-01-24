@@ -12,3 +12,5 @@ nodeGroups:
   # - name: ng-2
   #   instanceType: t2.micro
   #   desiredCapacity: 2
+
+  #kubescape scan  REgit@github.com:fojiglobal/clovis-infrasec.git  --account 1231a42b-9bd4-4f38-9638-858bb7f7fdb8 --access-key=2c2bfb6a-efff-49f8-a967-0e02c9bbe28e --server api.armosec.io
