@@ -1,0 +1,481 @@
+{
+  "request": {
+    "type": "City",
+    "query": "Douala, Cameroon",
+    "language": "en",
+    "unit": "m"
+  },
+  "location": {
+    "name": "Douala",
+    "country": "Cameroon",
+    "region": "Littoral",
+    "lat": "4.050",
+    "lon": "9.700",
+    "timezone_id": "Africa/Douala",
+    "localtime": "2025-02-17 10:51",
+    "localtime_epoch": 1739789460,
+    "utc_offset": "1.0"
+  },
+  "current": {
+    "observation_time": "09:51 AM",
+    "temperature": 30,
+    "weather_code": 386,
+    "weather_icons": [
+      "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0016_thundery_showers.png"
+    ],
+    "weather_descriptions": [
+      "Thunderstorm"
+    ],
+    "wind_speed": 4,
+    "wind_degree": 6,
+    "wind_dir": "N",
+    "pressure": 1010,
+    "precip": 0,
+    "humidity": 79,
+    "cloudcover": 75,
+    "feelslike": 32,
+    "uv_index": 5,
+    "visibility": 6,
+    "is_day": "yes"
+  }
+}{
+  "request": {
+    "type": "City",
+    "query": "Columbus, United States of America",
+    "language": "en",
+    "unit": "m"
+  },
+  "location": {
+    "name": "Columbus",
+    "country": "United States of America",
+    "region": "Ohio",
+    "lat": "39.961",
+    "lon": "-82.999",
+    "timezone_id": "America/New_York",
+    "localtime": "2025-02-17 04:50",
+    "localtime_epoch": 1739767800,
+    "utc_offset": "-5.0"
+  },
+  "current": {
+    "observation_time": "09:50 AM",
+    "temperature": -7,
+    "weather_code": 116,
+    "weather_icons": [
+      "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0004_black_low_cloud.png"
+    ],
+    "weather_descriptions": [
+      "Partly cloudy"
+    ],
+    "wind_speed": 22,
+    "wind_degree": 284,
+    "wind_dir": "WNW",
+    "pressure": 1020,
+    "precip": 0,
+    "humidity": 77,
+    "cloudcover": 50,
+    "feelslike": -15,
+    "uv_index": 0,
+    "visibility": 11,
+    "is_day": "no"
+  }
+}{
+  "request": {
+    "type": "City",
+    "query": "London, United Kingdom",
+    "language": "en",
+    "unit": "m"
+  },
+  "location": {
+    "name": "London",
+    "country": "United Kingdom",
+    "region": "City of London, Greater London",
+    "lat": "51.517",
+    "lon": "-0.106",
+    "timezone_id": "Europe/London",
+    "localtime": "2025-02-17 09:53",
+    "localtime_epoch": 1739785980,
+    "utc_offset": "0.0"
+  },
+  "current": {
+    "observation_time": "09:53 AM",
+    "temperature": 3,
+    "weather_code": 116,
+    "weather_icons": [
+      "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0002_sunny_intervals.png"
+    ],
+    "weather_descriptions": [
+      "Partly cloudy"
+    ],
+    "wind_speed": 12,
+    "wind_degree": 106,
+    "wind_dir": "ESE",
+    "pressure": 1022,
+    "precip": 0,
+    "humidity": 75,
+    "cloudcover": 25,
+    "feelslike": 0,
+    "uv_index": 0,
+    "visibility": 10,
+    "is_day": "yes"
+  }
+}{
+  "request": {
+    "type": "City",
+    "query": "New York, United States of America",
+    "language": "en",
+    "unit": "m"
+  },
+  "location": {
+    "name": "New York",
+    "country": "United States of America",
+    "region": "New York",
+    "lat": "40.714",
+    "lon": "-74.006",
+    "timezone_id": "America/New_York",
+    "localtime": "2025-02-17 04:52",
+    "localtime_epoch": 1739767920,
+    "utc_offset": "-5.0"
+  },
+  "current": {
+    "observation_time": "09:52 AM",
+    "temperature": 0,
+    "weather_code": 116,
+    "weather_icons": [
+      "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0004_black_low_cloud.png"
+    ],
+    "weather_descriptions": [
+      "Partly cloudy"
+    ],
+    "wind_speed": 34,
+    "wind_degree": 273,
+    "wind_dir": "W",
+    "pressure": 1002,
+    "precip": 0,
+    "humidity": 43,
+    "cloudcover": 75,
+    "feelslike": -7,
+    "uv_index": 0,
+    "visibility": 16,
+    "is_day": "no"
+  }
+}{
+  "request": {
+    "type": "City",
+    "query": "Tokyo, Japan",
+    "language": "en",
+    "unit": "m"
+  },
+  "location": {
+    "name": "Tokyo",
+    "country": "Japan",
+    "region": "Tokyo",
+    "lat": "35.690",
+    "lon": "139.692",
+    "timezone_id": "Asia/Tokyo",
+    "localtime": "2025-02-17 18:53",
+    "localtime_epoch": 1739818380,
+    "utc_offset": "9.0"
+  },
+  "current": {
+    "observation_time": "09:53 AM",
+    "temperature": 8,
+    "weather_code": 113,
+    "weather_icons": [
+      "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0008_clear_sky_night.png"
+    ],
+    "weather_descriptions": [
+      "Clear"
+    ],
+    "wind_speed": 44,
+    "wind_degree": 342,
+    "wind_dir": "NNW",
+    "pressure": 1005,
+    "precip": 0,
+    "humidity": 36,
+    "cloudcover": 0,
+    "feelslike": 4,
+    "uv_index": 0,
+    "visibility": 10,
+    "is_day": "no"
+  }
+}{
+  "request": {
+    "type": "City",
+    "query": "Kumba, Cameroon",
+    "language": "en",
+    "unit": "m"
+  },
+  "location": {
+    "name": "Kumba",
+    "country": "Cameroon",
+    "region": "Sud-Ouest",
+    "lat": "4.644",
+    "lon": "9.439",
+    "timezone_id": "Africa/Douala",
+    "localtime": "2025-02-17 10:50",
+    "localtime_epoch": 1739789400,
+    "utc_offset": "1.0"
+  },
+  "current": {
+    "observation_time": "09:50 AM",
+    "temperature": 32,
+    "weather_code": 113,
+    "weather_icons": [
+      "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
+    ],
+    "weather_descriptions": [
+      "Sunny"
+    ],
+    "wind_speed": 4,
+    "wind_degree": 260,
+    "wind_dir": "W",
+    "pressure": 1011,
+    "precip": 0,
+    "humidity": 49,
+    "cloudcover": 21,
+    "feelslike": 34,
+    "uv_index": 5,
+    "visibility": 10,
+    "is_day": "yes"
+  }
+}{
+  "request": {
+    "type": "City",
+    "query": "Douala, Cameroon",
+    "language": "en",
+    "unit": "m"
+  },
+  "location": {
+    "name": "Douala",
+    "country": "Cameroon",
+    "region": "Littoral",
+    "lat": "4.050",
+    "lon": "9.700",
+    "timezone_id": "Africa/Douala",
+    "localtime": "2025-02-17 10:51",
+    "localtime_epoch": 1739789460,
+    "utc_offset": "1.0"
+  },
+  "current": {
+    "observation_time": "09:51 AM",
+    "temperature": 30,
+    "weather_code": 386,
+    "weather_icons": [
+      "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0016_thundery_showers.png"
+    ],
+    "weather_descriptions": [
+      "Thunderstorm"
+    ],
+    "wind_speed": 4,
+    "wind_degree": 6,
+    "wind_dir": "N",
+    "pressure": 1010,
+    "precip": 0,
+    "humidity": 79,
+    "cloudcover": 75,
+    "feelslike": 32,
+    "uv_index": 5,
+    "visibility": 6,
+    "is_day": "yes"
+  }
+}{
+  "request": {
+    "type": "City",
+    "query": "Columbus, United States of America",
+    "language": "en",
+    "unit": "m"
+  },
+  "location": {
+    "name": "Columbus",
+    "country": "United States of America",
+    "region": "Ohio",
+    "lat": "39.961",
+    "lon": "-82.999",
+    "timezone_id": "America/New_York",
+    "localtime": "2025-02-17 04:57",
+    "localtime_epoch": 1739768220,
+    "utc_offset": "-5.0"
+  },
+  "current": {
+    "observation_time": "09:57 AM",
+    "temperature": -7,
+    "weather_code": 116,
+    "weather_icons": [
+      "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0004_black_low_cloud.png"
+    ],
+    "weather_descriptions": [
+      "Partly cloudy"
+    ],
+    "wind_speed": 22,
+    "wind_degree": 284,
+    "wind_dir": "WNW",
+    "pressure": 1020,
+    "precip": 0,
+    "humidity": 77,
+    "cloudcover": 50,
+    "feelslike": -15,
+    "uv_index": 0,
+    "visibility": 11,
+    "is_day": "no"
+  }
+}{
+  "request": {
+    "type": "City",
+    "query": "London, United Kingdom",
+    "language": "en",
+    "unit": "m"
+  },
+  "location": {
+    "name": "London",
+    "country": "United Kingdom",
+    "region": "City of London, Greater London",
+    "lat": "51.517",
+    "lon": "-0.106",
+    "timezone_id": "Europe/London",
+    "localtime": "2025-02-17 09:56",
+    "localtime_epoch": 1739786160,
+    "utc_offset": "0.0"
+  },
+  "current": {
+    "observation_time": "09:56 AM",
+    "temperature": 3,
+    "weather_code": 116,
+    "weather_icons": [
+      "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0002_sunny_intervals.png"
+    ],
+    "weather_descriptions": [
+      "Partly cloudy"
+    ],
+    "wind_speed": 12,
+    "wind_degree": 106,
+    "wind_dir": "ESE",
+    "pressure": 1022,
+    "precip": 0,
+    "humidity": 75,
+    "cloudcover": 25,
+    "feelslike": 0,
+    "uv_index": 0,
+    "visibility": 10,
+    "is_day": "yes"
+  }
+}{
+  "request": {
+    "type": "City",
+    "query": "New York, United States of America",
+    "language": "en",
+    "unit": "m"
+  },
+  "location": {
+    "name": "New York",
+    "country": "United States of America",
+    "region": "New York",
+    "lat": "40.714",
+    "lon": "-74.006",
+    "timezone_id": "America/New_York",
+    "localtime": "2025-02-17 04:57",
+    "localtime_epoch": 1739768220,
+    "utc_offset": "-5.0"
+  },
+  "current": {
+    "observation_time": "09:57 AM",
+    "temperature": 0,
+    "weather_code": 116,
+    "weather_icons": [
+      "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0004_black_low_cloud.png"
+    ],
+    "weather_descriptions": [
+      "Partly cloudy"
+    ],
+    "wind_speed": 34,
+    "wind_degree": 273,
+    "wind_dir": "W",
+    "pressure": 1002,
+    "precip": 0,
+    "humidity": 43,
+    "cloudcover": 75,
+    "feelslike": -7,
+    "uv_index": 0,
+    "visibility": 16,
+    "is_day": "no"
+  }
+}{
+  "request": {
+    "type": "City",
+    "query": "Tokyo, Japan",
+    "language": "en",
+    "unit": "m"
+  },
+  "location": {
+    "name": "Tokyo",
+    "country": "Japan",
+    "region": "Tokyo",
+    "lat": "35.690",
+    "lon": "139.692",
+    "timezone_id": "Asia/Tokyo",
+    "localtime": "2025-02-17 19:00",
+    "localtime_epoch": 1739818800,
+    "utc_offset": "9.0"
+  },
+  "current": {
+    "observation_time": "10:00 AM",
+    "temperature": 8,
+    "weather_code": 113,
+    "weather_icons": [
+      "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0008_clear_sky_night.png"
+    ],
+    "weather_descriptions": [
+      "Clear"
+    ],
+    "wind_speed": 45,
+    "wind_degree": 339,
+    "wind_dir": "NNW",
+    "pressure": 1005,
+    "precip": 0,
+    "humidity": 36,
+    "cloudcover": 0,
+    "feelslike": 4,
+    "uv_index": 0,
+    "visibility": 10,
+    "is_day": "no"
+  }
+}{
+  "request": {
+    "type": "City",
+    "query": "Kumba, Cameroon",
+    "language": "en",
+    "unit": "m"
+  },
+  "location": {
+    "name": "Kumba",
+    "country": "Cameroon",
+    "region": "Sud-Ouest",
+    "lat": "4.644",
+    "lon": "9.439",
+    "timezone_id": "Africa/Douala",
+    "localtime": "2025-02-17 10:57",
+    "localtime_epoch": 1739789820,
+    "utc_offset": "1.0"
+  },
+  "current": {
+    "observation_time": "09:57 AM",
+    "temperature": 32,
+    "weather_code": 113,
+    "weather_icons": [
+      "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
+    ],
+    "weather_descriptions": [
+      "Sunny"
+    ],
+    "wind_speed": 4,
+    "wind_degree": 260,
+    "wind_dir": "W",
+    "pressure": 1011,
+    "precip": 0,
+    "humidity": 49,
+    "cloudcover": 21,
+    "feelslike": 34,
+    "uv_index": 5,
+    "visibility": 10,
+    "is_day": "yes"
+  }
+}
